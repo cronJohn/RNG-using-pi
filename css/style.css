@@ -67,36 +67,48 @@ span {
                 0px 0px 4px rgba(255, 255, 255,.2);
 }
 
-.first {
+#first {
     text-align: center;
 }
 
-.counter {
+#counter {
     text-align: center;
 }
 
-.current-digit {
+#current-position {
     display: contents; 
 }
 
-.order {
+#sequence {
     font-size: 1.3em;
     background: #FAFAFF;
-    background: -webkit-linear-gradient(to right, #fafaff00 47%, #CF1512 50%, #fafaff00 53%);
-    background: -moz-linear-gradient(to right, #fafaff00 47%, #CF1512 50%, #fafaff00 53%);
-    background: linear-gradient(to right, #fafaff00 47%, #CF1512 50%, #fafaff00 53%);
+    background: -webkit-linear-gradient(to right, #fafaff00 46%, #CF1512 50%, #fafaff00 54%);
+    background: -moz-linear-gradient(to right, #fafaff00 46%, #CF1512 50%, #fafaff00 54%);
+    background: linear-gradient(to right, #fafaff00 46%, #CF1512 50%, #fafaff00 54%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
 }
 
-.collaboration {
+#collaboration {
     width: 100%;
 }
 
-.source {
+#source {
     margin-top: 55px;
+}
+
+#copy-button {
+    background-image: url("/svg/copy-button.svg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 20px;
+    width: 20px;
+    background-size: cover;
+    border: none;
+    outline: none;
 }
 
 h3 {
