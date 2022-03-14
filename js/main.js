@@ -1,16 +1,5 @@
 import { digitsOfPi } from "./digits.js";
 
-/*
-function getRandomNumberFromPi (length) {
-    let randomNumber = Math.floor(Math.random() * 10000);
-    
-    let arr = [];
-    for (let i = randomNumber; i < randomNumber + length; i++) {
-        arr.push(digitsOfPi[i]);
-    }
-}
-*/
-
 function concatDigitsOfPi(spread, position) {
     let string = "";
     let start = position - Math.floor((spread / 2))
@@ -25,24 +14,38 @@ function concatDigitsOfPi(spread, position) {
 let piSize = 10000
 let randomDigitInPi = Math.floor(Math.random() * piSize);
 
-function piRng (timesSwitchSeed) {
+function piRng(timesBeforeSeedSwitch) {
 
-    var randomDigitInPi = Math.floor(Math.random() * piSize);
+    var randomDigitInPi = Math.floor(Math.random() * piSize); // store initial RNG digit
     var count = 1;
 
     function givePiDigit() {
         console.log(`this is the digit: ${randomDigitInPi}`);
+        console.log(`this is the RNG: ${digitsOfPi[randomDigitInPi]}`);
 
-        if (count >= timesSwitchSeed) {
-            randomDigitInPi = Math.floor(Math.random() * piSize);
-            count = 1;
-        }else count++;
+        if (count >= timesBeforeSeedSwitch) { // if you generate the amount of RNG numbers you want, and it's time to switch seeds
+            randomDigitInPi = giveNewSeed();
+            count = 1
+        } 
+        
+        else if (randomDigitInPi === piSize) { // you don't want to keep incrementing the seed if at piSize
+            randomDigitInPi = giveNewSeed()
+        }
+
+        else { // you still need to generate more RNG numbers before a seed switch
+            count++
+            randomDigitInPi++
+        };
+    }
+
+    function giveNewSeed() {
+        return randomDigitInPi = Math.floor(Math.random() * piSize);
     }
 
     return givePiDigit;
 }
 
-var myDeal = piRng(3);
+var myDeal = piRng(2);
 myDeal();
 myDeal();
 myDeal();
