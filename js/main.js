@@ -21,16 +21,47 @@ function concatDigitsOfPi(spread, position) {
     return string
 }
 
-let randomNumber = Math.floor(Math.random() * 10000);
+
+let piSize = 10000
+let randomDigitInPi = Math.floor(Math.random() * piSize);
+
+function piRng (timesSwitchSeed) {
+
+    var randomDigitInPi = Math.floor(Math.random() * piSize);
+    var count = 1;
+
+    function givePiDigit() {
+        console.log(`this is the digit: ${randomDigitInPi}`);
+
+        if (count >= timesSwitchSeed) {
+            randomDigitInPi = Math.floor(Math.random() * piSize);
+            count = 1;
+        }else count++;
+    }
+
+    return givePiDigit;
+}
+
+var myDeal = piRng(3);
+myDeal();
+myDeal();
+myDeal();
+myDeal();
+myDeal();
+myDeal();
+myDeal();
+myDeal();
+myDeal();
+
 
 function changeNumbers() {
     let circleNum = document.getElementById("circle-num");
     let currentPosition = document.getElementById("current-position");
     let sequence = document.getElementById("sequence");
-    circleNum.innerHTML = digitsOfPi[randomNumber];
-    currentPosition.innerHTML = randomNumber;
-    sequence.innerHTML = concatDigitsOfPi(5,randomNumber);
-    randomNumber++;
+    circleNum.innerHTML = digitsOfPi[randomDigitInPi];
+    currentPosition.innerHTML = randomDigitInPi;
+    sequence.innerHTML = concatDigitsOfPi(5,randomDigitInPi);
+    randomDigitInPi++;
 }
 
 function copyToClipboard () {

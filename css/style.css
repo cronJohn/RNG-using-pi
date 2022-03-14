@@ -82,9 +82,9 @@ span {
 #sequence {
     font-size: 1.3em;
     background: #FAFAFF;
-    background: -webkit-linear-gradient(to right, #fafaff00 46%, #CF1512 50%, #fafaff00 54%);
-    background: -moz-linear-gradient(to right, #fafaff00 46%, #CF1512 50%, #fafaff00 54%);
-    background: linear-gradient(to right, #fafaff00 46%, #CF1512 50%, #fafaff00 54%);
+    background: -webkit-linear-gradient(to right, #fafaff00 47%, #CF1512 50%, #fafaff00 53%);
+    background: -moz-linear-gradient(to right, #fafaff00 47%, #CF1512 50%, #fafaff00 53%);
+    background: linear-gradient(to right, #fafaff00 47%, #CF1512 50%, #fafaff00 53%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
